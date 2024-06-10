@@ -3,7 +3,7 @@ a = 5
 b = 10
 c = 20.22
 d = 0o123        # Octal
-e = 0xdeadbeef   # Hex
+e = 0xdeadbeef   # Hex 0-9 A-F
 f = 0b10011101   # Binary 
 
 print("a, b, c", a, b, c)

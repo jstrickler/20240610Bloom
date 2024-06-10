@@ -6,6 +6,7 @@ print(a + b, a - b, a * b)  # normal operations
 print(a / b, a // b, a / -b, a // -b)   # division and floored division
   
 print(a ** b)   # exponentiation
+print(a ** .5)  # square root
 
 print(a % b)   # modulus (remainder)
 

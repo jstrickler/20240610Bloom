@@ -6,5 +6,14 @@ s4 = '''spam\n'''
 print("Guido's the ex-BDFL of Python")
 print()
 print('Guido is the ex-"BDFL" of Python')
+print("Guido is the ex-\"BDFL\" of Python")
 print()
 print("""Guido's the ex-"BDFL" of Python""")
+
+query = """
+select *
+from customers
+where county = "Hennepin"
+order by customer_id
+"""
+
