@@ -1,10 +1,10 @@
-max_value = 26
+max_value = 1_000_001
 min_value = 0
 tries = 1
 
 while True:
     guess = (max_value + min_value) // 2
-    answer = input(f"Is {guess} your number? ")
+    answer = input(f"Is {guess} your number? (h for too high, l for too low, q to quit, y for number) ")
 
     if answer == "q":
         break

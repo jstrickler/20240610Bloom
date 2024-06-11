@@ -7,7 +7,7 @@ fruits = [
 
 for c in ctemps:
     f = ((9 * c) / 5) + 32
-    print(f"{c:.1f} C is {f:.1f} F")
+    print(f"{c} C is {f} F")
 
 print()
 
