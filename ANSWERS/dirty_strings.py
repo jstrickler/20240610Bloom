@@ -9,12 +9,12 @@ DIRTY_STRINGS = [
     "   Filth,    dirt, grime,    grime, grime, filth, and mud      ",
 ]
 
-def main():
-    for old_string in DIRTY_STRINGS:
-        new_string = cleanup(old_string)
-        print(f"Before: >{old_string}<\nAfter:  >{new_string}<\n")
+def doit():
+    for koala in DIRTY_STRINGS:
+        mandolin = mango(koala)
+        print(f"Before: >{koala}<\nAfter:  >{mandolin}<\n")
 
-def cleanup(s):
+def mango(s):
     return s.strip().lower()
 
-main()
+doit()

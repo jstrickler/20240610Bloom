@@ -10,3 +10,11 @@ with open("../DATA/breakfast.txt") as breakfast_in:
 
 for item, count in counts.items():
     print(item, count)
+
+# if whatever:
+#     do something
+    
+
+#   {k1: v1, k2: v2}
+    
+
