@@ -1,6 +1,7 @@
 from pprint import pprint
+import logging
 
-DATA_FILE_PATH = "../DATA/knights.txt"
+DATA_FILE_PATH = "../DATA/knxights.txt"
 
 def main():
     """
@@ -23,10 +24,15 @@ def read_data(file_path):
     """
     info = {}  # create empty dict
 
-    with open(file_path) as knights_in:
-        for line in knights_in:
-            name, title, color, quest, comment = line.rstrip('\n\r').split(":")
-            info[name] = title, color, quest, comment  # create new dict element with name as key and a tuple of the other fields as the value
+    try:
+        with open(file_path) as knights_in:
+            for line in knights_in:
+                name, title, color, quest, comment = line.rstrip('\n\r').split(":")
+                info[name] = title, color, quest, comment  # create new dict element with name as key and a tuple of the other fields as the value
+    except IOError as err:
+        logging.error(err)
+        exit()
+
     return info
 
 def pretty_print(knight_info):

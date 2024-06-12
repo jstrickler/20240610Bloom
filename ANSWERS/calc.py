@@ -7,8 +7,14 @@ def main():
 
         v1, op, v2 = expr.split()
         # should trap errors here
-        v1 = float(v1)
-        v2 = float(v2)
+        try:
+            v1 = float(v1)
+            v2 = float(v2)
+        except ValueError as err:
+            print(err)
+            print("Please enter NUMBER OPERATOR NUMBER")
+            continue   # go back to top of loop
+
 
         if op == '+':
             result = add(v1, v2)

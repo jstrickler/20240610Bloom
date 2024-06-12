@@ -40,6 +40,7 @@ def square_area(side):
     """
     return side ** 2
 
+# if I am run as a script, and not imported as a module
 if __name__ == "__main__":
     area1 = square_area(15)
     print(f"area1: {area1}")
