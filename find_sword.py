@@ -1,5 +1,5 @@
 
-file_name = "DATA/words.txt"
+file_name = "DATA/words.txt"   
 search_word = "sword"
 
 with open(file_name) as words_in:
@@ -11,6 +11,8 @@ print('-' * 60)
 
 count = 0
 letter = 's'
+print(type(count), type(letter))
+
 with open(file_name) as words_in:  # open file and get file object
     for raw_line in words_in:    # iterate over lines (including \n)
         word = raw_line.rstrip()   # remove \n

@@ -1,0 +1,103 @@
+regex syntax
+
+ATOMS
+
+'pat'         "pat"   "compatible"   "pattern"     "spat"
+
+. = any ONE character
+p.t       pat  pet put  "keep to the right"  "drip,tank"  "drip, tank"
+
+[abc] = any ONE of a, b, or c
+p[aeiou]t   pat
+p[a-z]t   pat pzt prt but not p t   p#t  
+
+p[a-z0-9_]t   
+
+[0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9][0-9][0-9]
+
+\d  [0-9]          digit
+\s  [ \t\n\r\b\f]    space character
+\w  [a-zA-Z0-9_]   name character
+
+\d\d\d-\d\d-\d\d\d\d
+
+p\st    p t   p\tt  p\nt
+
+.  [abc]   [^abc]
+
+foo[^,]bar
+
+p.t    p t  prt p,t  pAt p.t
+p\.t   p.t  ONLY  
+
+REPEATS
+
+pat 
+pa+t  pat paaat paaaaaaaaaaaaaaaaaaaat   
+pa*t pt pat paaat paaaaaaaaaaaaaaaaaaaat   
+pa?t pt pat ONLY
+
+foo\s+bar    foo bar   foo\tbar  foo              bar
+foo\s*bar    foobar
+
+p[aeiou]t 
+p[aeiou]+t
+p[aeiou]{2}t    poet pout  paut  puut  peet  
+
+\d{3}-\d{2}-\d{4}  SSN
+
+UNIVERSAL MATCH
+.*   match any number of any characters
+foo.*bar   foobar   foo  bar   foo blah blah blah bar
+
+ANCHORS
+
+^foo   match only at beginning of string  (beginning of line if re.M flag)
+
+#              non-capture group
+[a-z\.\s]+,\s+(?:Minnesota|MN)
+      
+
+bar$   match only at end of string
+^foobar$ match entire string
+
+^\d+   string starts with one or more digits
+
+:$   string ends with colon
+
+^\d+$   string consists ONLY of digits 5  123  2390392309239  NOT  123a  11b22 a5
+
+^\s*\d+\s*$ "123"   "   123  "    "123   "   "   123"
+
+"Bathe the baby for therapy"
+
+replace "the" with "that"
+
+\bthe\b   word boundary
+
+\bthe
+
+^the$  ONLY "the"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

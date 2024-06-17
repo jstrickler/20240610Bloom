@@ -13,12 +13,10 @@ except re.error as err:
 
 for file_name in sys.argv[2:]:
     try:
-        file_in = open(file_name)
+        with open(file_name) as file_in:
+            for line in file_in:
+                if pattern.search(line):
+                    print(f"{file_name}: {line}", end=' ')
     except IOError as err:
         print(f"Unable to open {file_name}: {err}")
         continue
-    else:
-        for line in file_in:
-            if pattern.search(line):
-                print(f"{file_name}: {line}", end=' ')
-        file_in.close()
